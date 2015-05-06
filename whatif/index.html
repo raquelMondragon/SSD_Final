@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>What IF</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="funciones.js"></script>
+</head>
+<body>
+	
+<div id="principal">
+	<h1>Aplicación de los modelos What if y Goal seek en el plan de negocios</h1>
+	<div id="area">
+			Área: <input type="text" placeholder="Ingrese Area" id="nombre">
+			Monto: <input type="number" placeholder="$00.00" id="monto">
+			<button onclick="determinar()">Determinar</button>
+	</div>
+			
+	<section id="datos">
+			<div>
+				Porcentaje: <input type="number" placeholder="100" id="porciento">
+				Subárea: <input type="text" placeholder="Subárea" id="concepto">
+				<button id="add" onclick="agregar()">Agregar</button>
+			</div>
+	</section>
+
+	<section id="calculo">
+		
+	</section>
+</div>
+<!--Fin del codigo-->
+
+<script src="funciones.js"></script>	
+
+<script>
+	for (i=1; i<localStorage.length; i++) 
+	{
+		nombreModelo = localStorage.getItem('nombre' + 'monto');
+		modelo = '<div class="lugar" id="marco"><div class="marco-nombre">'+ nombreModelo +'</div><div class="marco-controles"><div class="lugar-controles-eliminar">X</div></div></div>';
+		
+		document.getElementById('calculo').innerHTML += modelo;
+	};	
+</script>
+
+
+</body>
+</html>
